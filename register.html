@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Photography Club - Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Event Registration</h1>
+        <p>Sign up for a club activity</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="events.html">Events</a>
+            <a class="active" href="register.html">Register</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Registration Form</h2>
+            <form id="registerForm">
+                <label for="studentName">Full name</label>
+                <input type="text" id="studentName" name="studentName" placeholder="Enter your full name" minlength="3" maxlength="60" required>
+                <label for="studentEmail">University email</label>
+                <input type="email" id="studentEmail" name="studentEmail" placeholder="name@university.edu" required>
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" placeholder="03001234567" pattern="[0-9]{11}" title="Enter 11 digits" required>
+                <label for="eventChoice">Choose event</label>
+                <select id="eventChoice" name="eventChoice" required>
+                    <option value="">Select an event</option>
+                    <option value="Campus Photo Walk">Campus Photo Walk</option>
+                    <option value="Mobile Photography">Mobile Photography</option>
+                    <option value="Portrait Workshop">Portrait Workshop</option>
+                    <option value="Photo Exhibition">Photo Exhibition</option>
+                </select>
+                <fieldset>
+                    <legend>How did you hear about us?</legend>
+                    <label for="friends"><input type="radio" id="friends" name="source" value="Friends" required> Friends</label>
+                    <label for="poster"><input type="radio" id="poster" name="source" value="Poster"> Poster</label>
+                    <label for="social"><input type="radio" id="social" name="source" value="Social media"> Social media</label>
+                </fieldset>
+                <button type="submit">Register</button>
+            </form>
+            <p id="message" role="status" aria-live="polite"></p>
+        </section>
+        <section>
+            <h2>Saved Registrations</h2>
+            <div class="table-area">
+                <table>
+                    <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Event</th><th>Source</th></tr></thead>
+                    <tbody id="savedList"></tbody>
+                </table>
+            </div>
+            <button id="clearButton" type="button">Clear all</button>
+        </section>
+    </main>
+    <footer><p>Campus Photography Club - Student project, 2026</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>
